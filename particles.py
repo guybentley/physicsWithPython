@@ -6,6 +6,9 @@ class atom:
         self.electrons = electrons
         self.neutrons = netruons
 
-        def atomicMass():
+        def atomicMass(self):
             return protons + electrons + netruons
+
+        def printSymbolAndName(self):
+            print(f'{self.symbol} :: {self.atomName}')
         
