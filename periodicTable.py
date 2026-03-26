@@ -140,5 +140,9 @@ class periodicTable:
             californium, einsteinium, fermium, mendelevium, nobelium, lawrencium,
             rutherfordium, dubnium, seaborgium, bohrium, hassium, meitnerium, darmstadtium,
             roentgenium, copernicium, nihonium, flerovium, moscovium, livermorium,
-            tennessine, oganesson,
+            tennessine, oganesson
         ]
+
+    def print_table(self):
+        for element in self.table:
+            print(element.atomName)
