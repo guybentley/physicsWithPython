@@ -146,3 +146,9 @@ class periodicTable:
     def print_table(self):
         for element in self.table:
             print(element.atomName)
+
+    def element_exists(self, symbol):
+        for element in self.table:
+            if element.symbol == symbol:
+                return True
+        return False
