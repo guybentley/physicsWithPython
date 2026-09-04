@@ -6,6 +6,9 @@ class atom:
         self.electrons = electrons
         self.neutrons = netruons
 
+        if self.protons < 0 or self.electrons < 0 or self.neutrons < 0:
+            raise ValueError("Protons, electrons, and neutrons must be non-negative integers.")
+
     def atomicMass(self):
         return self.protons + self.electrons + self.neutrons
 
@@ -34,6 +37,18 @@ class particle:
     def printSymbolAndName(self):
         print(f'{self.symbol} :: {self.particleName}')
 
+class electron(particle):
+    def __init__(self):
+        super().__init__('electron', 'e', -1, 0)
+
+class proton(particle):
+    def __init__(self):
+        super().__init__('proton', 'p', 1, 1)   
+
+class neutron(particle):
+    def __init__(self):
+        super().__init__('neutron', 'n', 0, 1) 
+
 class theWorld:
     def __init__(self):
         self.atoms = {}
@@ -41,9 +56,10 @@ class theWorld:
 
 
     subAtomicParticles = {
-        'proton': particle('proton', 'p', 1, 1),
-        'neutron': particle('neutron', 'n', 0, 1),
-        'electron': particle('electron', 'e', -1, 0)}
+        'electron': electron(),
+        'proton': proton(),
+        'neutron': neutron()
+    }
 
     atoms = {
         'hydrogen':       atom("Hydrogen",       "H",   1,   1,   0),
